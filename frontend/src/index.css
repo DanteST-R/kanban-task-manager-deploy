@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(0.5 0.2 250);
+  --color-surface: oklch(0.98 0 0);
+  --color-surface-dark: oklch(0.15 0 0);
+}
+
+@layer base {
+  :root {
+    --bg-color: #f3f4f6;
+    --text-color: #111827;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+  }
+
+  /* Dark mode variables - System default or .dark class */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #111827;
+      --text-color: #f9fafb;
+      --card-bg: #1f2937;
+      --border-color: #374151;
+    }
+  }
+
+  .dark {
+    --bg-color: #111827;
+    --text-color: #f9fafb;
+    --card-bg: #1f2937;
+    --border-color: #374151;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+}
